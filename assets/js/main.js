@@ -176,6 +176,14 @@
     });
 
   });
+  $(document).ready(function(){
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy', // Date format to display
+        todayHighlight: true, // Highlight today's date
+        autoclose: true,      // Close the picker after date selection
+        weekStart: 1          // Start week on Monday (0=Sunday)
+    });
+});
 
   /**
    * Init swiper sliders
