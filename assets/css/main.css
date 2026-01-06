@@ -4432,11 +4432,28 @@ section,
   font-size: 14px;
   color: #666;
 }
+.btn-whatsapp {
+  background-color: transparent; /* WhatsApp green */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  margin-left: 10px; /* spacing from other buttons */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
+.btn-whatsapp:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
 .recommendations-text {
   display: -webkit-box;
-  -webkit-line-clamp: 4;   /* number of visible lines */
+  -webkit-line-clamp: 3;   /* number of visible lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
