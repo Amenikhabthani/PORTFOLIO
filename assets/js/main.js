@@ -6,6 +6,14 @@
 * License: https://bootstrapmade.com/license/
 */
 
+document.querySelector(".read-more-btn").addEventListener("click", function () {
+    const text = document.querySelector(".recommendations-text");
+    text.classList.toggle("expanded");
+    this.textContent = text.classList.contains("expanded")
+      ? "Read less"
+      : "Read more";
+  });
+
 (function() {
   "use strict";
 
@@ -243,5 +251,22 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  document.addEventListener('click', function (e) {
+  if (!e.target.classList.contains('toggle-review')) return;
+
+  const button = e.target;
+  const review = button.closest('.swiper-slide') || document;
+  const moreText = review.querySelector('.more-text');
+
+  if (!moreText) return;
+
+  const isHidden = moreText.style.display === 'none';
+
+  moreText.style.display = isHidden ? 'inline' : 'none';
+  button.textContent = isHidden ? 'Read less' : 'Read more';
+});
+
+
 
 })();

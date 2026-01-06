@@ -519,6 +519,27 @@ h6 {
   border-color: var(--accent-color);
 }
 
+.footer .social-links a img {
+  width: 16px;
+  height: 16px;
+}
+/* Footer Hugging Face icon */
+.footer .social-links a.hf-icon {
+  color: #ffffff; /* makes SVG white */
+}
+
+.footer .social-links a.hf-icon:hover {
+  color: #ffffff; /* stays white on hover */
+}
+
+/* SVG sizing */
+.footer .social-links .hf-svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  display: block;
+}
+
 .footer h4 {
   font-size: 16px;
   font-weight: bold;
@@ -579,6 +600,24 @@ h6 {
 .footer .credits {
   margin-top: 6px;
   font-size: 13px;
+}
+.company {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.company-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 6px; /* optional, nice for modern UI */
+}
+
+.company-name {
+  font-weight: 600;
+  color: var(--default-color);
 }
 
 /*--------------------------------------------------------------
@@ -811,12 +850,15 @@ section,
 .hero .container {
   position: relative;
   z-index: 3;
+
+
 }
 
 .hero h2 {
   margin: 0;
   font-size: 48px;
   font-weight: 700;
+
 }
 
 .hero p {
@@ -856,6 +898,33 @@ section,
   color: var(--contrast-color);
   transform: translateY(-3px);
 }
+
+.hero .social-links a img {
+  width: 20px;
+  height: 20px;
+
+}
+.hero .social-links a.hf-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  transition: 0.3s;
+}
+
+.hero .social-links a.hf-icon:hover {
+  background: var(--accent-color);
+}
+
+.hero .social-links .hf-svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
 
 @media (max-width: 768px) {
   .hero h2 {
@@ -1071,8 +1140,27 @@ section,
   transform: translateY(-3px);
 }
 
+.about .profile-card .social-connect a img {
+  width: 18px;
+  height: 18px;
+}
+
 .about .content-wrapper .bio-section {
   margin-bottom: 50px;
+}
+.about .profile-card .social-connect a.hf-icon {
+  color: #ffffff; /* makes SVG white */
+}
+
+.about .profile-card .social-connect a.hf-icon:hover {
+  color: #ffffff; /* stays white on hover */
+}
+
+.about .profile-card .social-connect .hf-svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  display: block;
 }
 
 .about .content-wrapper .bio-section .section-tag {
@@ -1602,6 +1690,12 @@ section,
   font-size: 0.9rem;
   color: var(--heading-color);
   font-weight: 500;
+  text-decoration: none;
+}
+
+.resume .education-section .education-timeline .timeline-track .timeline-item .timeline-content .certifications-list .cert-item .cert-name:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
 }
 
 .resume .education-section .education-timeline .timeline-track .timeline-item .timeline-content .certifications-list .cert-item .cert-year {
@@ -4339,11 +4433,19 @@ section,
   color: #666;
 }
 
+
 .recommendations-text {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;   /* number of visible lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.response-time {
+  color: #ffffff;
+}
+
+.recommendations-text.expanded {
+  -webkit-line-clamp: unset;
 }
 
 .stars {
