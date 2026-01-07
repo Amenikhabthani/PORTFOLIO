@@ -14,6 +14,29 @@ document.querySelector(".read-more-btn").addEventListener("click", function () {
       : "Read more";
   });
 
+document.querySelectorAll(".expand-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const hiddenItems = btn.previousElementSibling;
+    const text = btn.querySelector(".btn-text");
+    const icon = btn.querySelector(".btn-icon");
+
+    const isHidden =
+      hiddenItems.style.display === "none" || hiddenItems.style.display === "";
+
+    if (isHidden) {
+      hiddenItems.style.display = "block";
+      text.textContent = "Show Less";
+      icon.textContent = "▴";
+      btn.classList.add("expanded");
+    } else {
+      hiddenItems.style.display = "none";
+      text.textContent = "Show More";
+      icon.textContent = "▾";
+      btn.classList.remove("expanded");
+    }
+  });
+});
+
 (function() {
   "use strict";
 

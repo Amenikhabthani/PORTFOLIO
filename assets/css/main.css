@@ -818,14 +818,15 @@ section,
 }
 
 .hero {
-  padding-top: 80px;
   min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-bottom: 80px;
+  padding: 0; /* IMPORTANT */
+  background: url("../img/profile/Design sans titre (12).png")
+              center center / cover no-repeat;
 }
 
 .hero img {
@@ -850,6 +851,8 @@ section,
 .hero .container {
   position: relative;
   z-index: 3;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
 
 }
@@ -4352,9 +4355,7 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+
 
 /* Custom styles for radio labels */
 .radio-label {
@@ -4450,7 +4451,43 @@ section,
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+.hidden-items {
+  display: none; /* Hidden by default */
+}
 
+.hidden-items .exp-card {
+  margin-bottom: 20px; /* add space between cards */
+}
+.expand-btn {
+
+  margin-top: 1rem;
+  padding: 0.25rem 0.75rem;  /* smaller size */
+  border: 1px solid black;    /* black border */
+  background-color: transparent; /* transparent background */
+  color: white;               /* white text */
+  cursor: pointer;
+  border-radius: 5px;         /* rounded corners */
+  font-size: 0.9rem;          /* smaller font */
+  transition: background-color 0.3s, color 0.3s; /* smooth hover */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.expand-btn:hover {
+  background-color: black;    /* black background on hover */
+  color: white;               /* text turns white */
+}
+.expand-btn .btn-icon {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when expanded */
+.expand-btn.expanded .btn-icon {
+  transform: rotate(180deg);
+}
 .recommendations-text {
   display: -webkit-box;
   -webkit-line-clamp: 3;   /* number of visible lines */
