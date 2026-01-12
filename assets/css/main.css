@@ -818,15 +818,14 @@ section,
 }
 
 .hero {
-  min-height: 100vh;
+  min-height: 95vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 0; /* IMPORTANT */
-  background: url("../img/profile/Design sans titre (12).png")
-              center center / cover no-repeat;
+  padding-bottom: 80px;
+  padding-top: 80px;
 }
 
 .hero img {
@@ -851,8 +850,7 @@ section,
 .hero .container {
   position: relative;
   z-index: 3;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  
 
 
 }
@@ -1828,7 +1826,7 @@ section,
 
 .services .service-item::before {
   content: "";
-  position: absolute;
+  position: center;
   top: 0;
   left: 0;
   width: 100%;

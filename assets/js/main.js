@@ -6,13 +6,18 @@
 * License: https://bootstrapmade.com/license/
 */
 
-document.querySelector(".read-more-btn").addEventListener("click", function () {
-    const text = document.querySelector(".recommendations-text");
-    text.classList.toggle("expanded");
-    this.textContent = text.classList.contains("expanded")
+const readMoreBtn = document.querySelector(".read-more-btn");
+const recommendationsText = document.querySelector(".recommendations-text");
+
+if (readMoreBtn && recommendationsText) {
+  readMoreBtn.addEventListener("click", function () {
+    recommendationsText.classList.toggle("expanded");
+    this.textContent = recommendationsText.classList.contains("expanded")
       ? "Read less"
       : "Read more";
   });
+}
+
 
 document.querySelectorAll(".expand-btn").forEach(btn => {
   btn.addEventListener("click", () => {
@@ -102,15 +107,18 @@ document.querySelectorAll(".expand-btn").forEach(btn => {
   }
 
   /**
-   * Scroll top button
-   */
-  let scrollTop = document.querySelector('.scroll-top');
+ * Scroll top button
+ */
+const scrollTop = document.querySelector('.scroll-top');
 
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
-  }
+function toggleScrollTop() {
+  if (!scrollTop) return;
+  window.scrollY > 100
+    ? scrollTop.classList.add('active')
+    : scrollTop.classList.remove('active');
+}
+
+if (scrollTop) {
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
@@ -121,6 +129,8 @@ document.querySelectorAll(".expand-btn").forEach(btn => {
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
+}
+
 
   /**
    * Animation on scroll function and init
@@ -207,14 +217,7 @@ document.querySelectorAll(".expand-btn").forEach(btn => {
     });
 
   });
-  $(document).ready(function(){
-    $('.datepicker').datepicker({
-        format: 'dd/mm/yyyy', // Date format to display
-        todayHighlight: true, // Highlight today's date
-        autoclose: true,      // Close the picker after date selection
-        weekStart: 1          // Start week on Monday (0=Sunday)
-    });
-});
+  
 
   /**
    * Init swiper sliders
@@ -289,7 +292,4 @@ document.querySelectorAll(".expand-btn").forEach(btn => {
   moreText.style.display = isHidden ? 'inline' : 'none';
   button.textContent = isHidden ? 'Read less' : 'Read more';
 });
-
-
-
 })();
