@@ -18,6 +18,18 @@ if (readMoreBtn && recommendationsText) {
   });
 }
 
+document.querySelectorAll(".exp-read-more").forEach(btn => {
+  btn.addEventListener("click", function () {
+    // find the next sibling of the container, which holds the hidden content
+    const moreContent = this.closest(".read-more-container").nextElementSibling;
+    moreContent.classList.toggle("d-none");
+    this.textContent = moreContent.classList.contains("d-none")
+      ? "Read more"
+      : "Read less";
+  });
+});
+
+
 
 document.querySelectorAll(".expand-btn").forEach(btn => {
   btn.addEventListener("click", () => {

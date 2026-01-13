@@ -818,7 +818,7 @@ section,
 }
 
 .hero {
-  min-height: 95vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -1391,6 +1391,18 @@ section,
 .resume .section-header {
   margin-bottom: 2.5rem;
 }
+.resume .read-more-container {
+  text-align: center; /* centers the button horizontally */
+  margin-top: 1rem;  /* optional spacing above the button */
+}
+
+.exp-read-more {
+  font-weight: 500;
+  color: var(--accent-color);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
 
 .resume .section-header .header-content .section-badge {
   display: inline-block;
@@ -1549,6 +1561,38 @@ section,
   font-weight: 500;
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
 }
+/* Expanded experience content should match description style */
+.resume .experience-section .experience-cards 
+.exp-card .card-body .more-content p,
+.resume .experience-section .experience-cards 
+.exp-card .card-body .more-content li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+}
+.resume .experience-section .experience-cards 
+.exp-card .card-body .more-content ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.2rem;
+
+}
+
+.resume .experience-section .experience-cards 
+.exp-card .card-body .more-content li {
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-weight: 600;
+  color: rgb(167, 159, 159);
+  margin-right: 0.3rem;
+}
+.line-divider {
+  border: none;
+  height: 1px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin: 0.5rem 0 1rem 0; /* space above and below line */
+}
+
 
 .resume .education-section .education-timeline .timeline-track {
   position: relative;
