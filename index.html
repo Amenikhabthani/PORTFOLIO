@@ -738,13 +738,62 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="https://formspree.io/f/xeeokjga" method="POST">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Send</button>
-</form>
+            <form action="https://formspree.io/f/xeeokjga" method="POST" class="contact-form">
+              <p class="small mb-3">Typical response time: <strong>24–48 hours</strong></p>
 
+              <!-- Formspree metadata -->
+              <input type="hidden" name="_subject" value="New Portfolio Contact Request">
+              <input type="hidden" name="_template" value="table">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Project title" required>
+                </div>
+                <div class="col-md-12">        
+                  <p class="small mb-3">Desired start date</p>
+
+                  <label class="form-control radio-rect">
+                    <input type="radio" name="start_option" id="startNow" value="As soon as possible">
+                    As soon as possible
+                  </label>
+                </div>
+                  <div class="col-md-12">
+                    <label class="form-control radio-rect">
+                      <input type="radio" name="start_option" id="flexible" value="Flexible">
+                      Flexible
+                   </label>
+                   </div>
+
+                <div class="col-md-12">
+                  <label class="form-control radio-rect">
+                    <input type="radio" name="start_option" id="givenDate" value="On a given date">
+                    On a given date
+                  </label>                  
+                  <input type="date" name="start_date" id="start_date_input" class="form-control mt-2">
+
+                </div>  
+
+                
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Briefly describe your project, goals, and timeline" required=""></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <!-- Privacy reassurance -->
+                   <p class="small">Your information will be kept confidential and used only to respond to your inquiry.</p>
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
           </div>
 
         </div>
@@ -844,23 +893,27 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const dateInput = document.getElementById('start_date_input');
-      document.querySelectorAll('input[name="gridRadios"]').forEach(radio => {
-        radio.addEventListener('change', function() {
-          if (this.id === 'gridRadios3') {
-            dateInput.required = true;
-          } else {
-            dateInput.required = false;
-          }
-        });
-      });
-      // Set initial state
-      if (document.getElementById('gridRadios3').checked) {
+  const dateInput = document.getElementById('start_date_input');
+  const radios = document.querySelectorAll('input[name="start_option"]');
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', function() {
+      if (this.id === 'givenDate') {
         dateInput.required = true;
       } else {
         dateInput.required = false;
       }
     });
+  });
+
+  // Set initial state
+  if (document.getElementById('givenDate').checked) {
+    dateInput.required = true;
+  } else {
+    dateInput.required = false;
+  }
+});
+
   </script>
 
 </body>
