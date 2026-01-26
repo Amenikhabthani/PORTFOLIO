@@ -54,6 +54,21 @@
   --contrast-color: #ffffff;
 }
 
+.light-mode {
+  --background-color: #ffffff;
+  --default-color: #212529;
+  --heading-color: #212529;
+  --accent-color: #ff4d4f;
+  --surface-color: #f8f9fa;
+  --contrast-color: #ffffff;
+  --nav-color: #212529;
+  --nav-hover-color: #ff4d4f;
+  --nav-mobile-background-color: #f8f9fa;
+  --nav-dropdown-background-color: #f8f9fa;
+  --nav-dropdown-color: #212529;
+  --nav-dropdown-hover-color: #ff4d4f;
+}
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
@@ -525,11 +540,11 @@ h6 {
 }
 /* Footer Hugging Face icon */
 .footer .social-links a.hf-icon {
-  color: #ffffff; /* makes SVG white */
+  color: #918d8d; /* makes SVG white */
 }
 
 .footer .social-links a.hf-icon:hover {
-  color: #ffffff; /* stays white on hover */
+  color: #918d8d; /* stays white on hover */
 }
 
 /* SVG sizing */
@@ -781,7 +796,7 @@ section,
 
 .section-title .subtitle {
   display: inline-block;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   font-weight: 400;
   color: var(--accent-color);
   text-transform: uppercase;
@@ -928,15 +943,48 @@ section,
 
 
 @media (max-width: 768px) {
+  .header .logo h1 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 400;
+  color: var(--heading-color);
+}
   .hero h2 {
-    font-size: 32px;
+    font-size: 22px;
+
   }
 
   .hero p {
-    font-size: 20px;
+    font-size: 15px;
+  }
+
+  .hero img {
+    height: 50vh; /* Reduce height on mobile to show more of the image */
+    object-fit: cover; /* Change to contain to show full image instead of cropping */
+    object-position: center; /* Center the image */
+    width: 100vw;
+  }
+
+  .hero {
+    min-height: 50vh; /* Adjust hero section height to match image */
+    width: 100vw;
+  }
+  .hero .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .hero .social-links a img{
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .hero .social-links a.hf-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 }
-
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -1150,11 +1198,11 @@ section,
   margin-bottom: 50px;
 }
 .about .profile-card .social-connect a.hf-icon {
-  color: #ffffff; /* makes SVG white */
+  color: #161616; /* makes SVG white */
 }
 
 .about .profile-card .social-connect a.hf-icon:hover {
-  color: #ffffff; /* stays white on hover */
+  color: #beb1b1; /* stays white on hover */
 }
 
 .about .profile-card .social-connect .hf-svg {
@@ -4560,6 +4608,114 @@ section,
 .btn-whatsapp:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .btn-whatsapp {
+    display: none;
+  }
+  .btn-theme-toggle {
+    display: none !important;
+  }
+}
+
+/* Hide toggle button on tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .btn-theme-toggle {
+    display: none !important;
+  }
+  .btn-whatsapp {
+    position: absolute;
+    right: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0;
+  }
+  .hero img {
+    height: 60vh; /* Reduce height on mobile to show more of the image */
+    object-fit: cover; /* Change to contain to show full image instead of cropping */
+    object-position: center; /* Center the image */
+    width: 100vw;
+  }
+
+  .hero {
+    min-height: 60vh; /* Adjust hero section height to match image */
+    width: 100vw;
+  }
+  .hero h2 {
+    font-size: 30px;
+  }
+  .hero p {
+    font-size: 20px;
+  }
+  .hero .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .hero .social-links a img{
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .hero .social-links a.hf-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+.btn-theme-toggle-menu {
+  background-color: transparent;
+  color: var(--default-color);
+  border: 1px solid var(--default-color);
+  padding: 8px 12px;
+  border-radius: 50px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn-theme-toggle-menu:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: scale(1.05);
+}
+
+@media (min-width: 1200px) {
+  .theme-toggle-mobile {
+    display: none !important;
+  }
+
+}
+
+.btn-theme-toggle {
+  background-color: transparent;
+  color: var(--default-color);
+  border: 1px solid var(--default-color);
+  padding: 8px 12px;
+  border-radius: 50px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-theme-toggle:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: scale(1.05);
 }
 .hidden-items {
   display: none; /* Hidden by default */

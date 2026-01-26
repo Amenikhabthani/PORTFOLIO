@@ -305,3 +305,57 @@ if (scrollTop) {
   button.textContent = isHidden ? 'Read less' : 'Read more';
 });
 })();
+
+// Theme toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const desktopToggle = document.getElementById('theme-toggle');
+  const mobileToggle = document.getElementById('theme-toggle-menu');
+  const body = document.body;
+
+  // Check for saved theme preference or default to dark mode
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  if (currentTheme === 'light') {
+    body.classList.add('light-mode');
+    updateIcons('sun-fill');
+  } else {
+    updateIcons('moon-fill');
+  }
+
+  // Update both desktop and mobile icons
+  function updateIcons(iconName) {
+    if (desktopToggle) {
+      const desktopIcon = desktopToggle.querySelector('i');
+      if (desktopIcon) {
+        desktopIcon.classList.remove('bi-moon-fill', 'bi-sun-fill');
+        desktopIcon.classList.add('bi-' + iconName);
+      }
+    }
+    if (mobileToggle) {
+      const mobileIcon = mobileToggle.querySelector('i');
+      if (mobileIcon) {
+        mobileIcon.classList.remove('bi-moon-fill', 'bi-sun-fill');
+        mobileIcon.classList.add('bi-' + iconName);
+      }
+    }
+  }
+
+  // Handle desktop toggle
+  if (desktopToggle) {
+    desktopToggle.addEventListener('click', function() {
+      body.classList.toggle('light-mode');
+      const isLight = body.classList.contains('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      updateIcons(isLight ? 'sun-fill' : 'moon-fill');
+    });
+  }
+
+  // Handle mobile toggle
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', function() {
+      body.classList.toggle('light-mode');
+      const isLight = body.classList.contains('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      updateIcons(isLight ? 'sun-fill' : 'moon-fill');
+    });
+  }
+});
