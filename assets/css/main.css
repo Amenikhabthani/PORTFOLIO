@@ -985,6 +985,19 @@ section,
     font-size: 16px;
   }
 }
+@media (min-width: 481px) and (max-width: 767px) {
+  .hero img {
+    height: 48vh; /* Reduce height on mobile to show more of the image */
+    object-fit: cover; /* Change to contain to show full image instead of cropping */
+    object-position: center; /* Center the image */
+    width: 100vw;
+  }
+
+  .hero {
+    min-height: 48vh; /* Adjust hero section height to match image */
+    width: 100vw;
+  }
+}
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
