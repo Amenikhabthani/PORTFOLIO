@@ -61,7 +61,7 @@
   --accent-color: #ff4d4f;
   --surface-color: #f8f9fa;
   --contrast-color: #ffffff;
-  --nav-color: #212529;
+  --nav-color: #6c757d;
   --nav-hover-color: #ff4d4f;
   --nav-mobile-background-color: #f8f9fa;
   --nav-dropdown-background-color: #f8f9fa;
@@ -4604,6 +4604,10 @@ section,
   margin-left: 10px; /* spacing from other buttons */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.btn-whatsapp.subtle {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
 
 .btn-whatsapp:hover {
   transform: scale(1.05);
@@ -4693,29 +4697,112 @@ section,
   .theme-toggle-mobile {
     display: none !important;
   }
-
 }
 
-.btn-theme-toggle {
+.btn-theme-toggle-footer {
   background-color: transparent;
   color: var(--default-color);
   border: 1px solid var(--default-color);
   padding: 8px 12px;
   border-radius: 50px;
   font-weight: 500;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
   text-decoration: none;
-  margin-left: 10px;
+  margin-top: 10px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
-.btn-theme-toggle:hover {
+.btn-theme-toggle-footer:hover {
   background-color: var(--accent-color);
   color: var(--contrast-color);
   transform: scale(1.05);
+}
+.theme-toggle {
+  display: center;
+  align-items: center;
+  gap: 10px; /* space between text and toggle */
+}
+
+.theme-label {
+  font-size: 13px;
+  color: var(--default-color);
+}
+
+/* Theme Switch */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-top: 10px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--surface-color);
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--default-color);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: var(--contrast-color);
+}
+
+.toggle-label {
+  display: none;
+  margin-left: 10px;
+  font-size: 14px;
+  color: var(--default-color);
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    padding-bottom: 30px;
+  }
+  .footer .footer-top {
+    padding-top: 30px;
+  }
+  .toggle-label {
+    display: inline;
+  }
+}
+
+/* Hide on mobile and tablet */
+@media (max-width: 1199px) {
+  .theme-switch {
+    display: none;
+  }
 }
 .hidden-items {
   display: none; /* Hidden by default */
@@ -4728,9 +4815,9 @@ section,
 
   margin-top: 1rem;
   padding: 0.25rem 0.75rem;  /* smaller size */
-  border: 1px solid black;    /* black border */
+  border: 1px solid var(--default-color);    /* adaptive border */
   background-color: transparent; /* transparent background */
-  color: white;               /* white text */
+  color: var(--default-color);               /* adaptive text */
   cursor: pointer;
   border-radius: 5px;         /* rounded corners */
   font-size: 0.9rem;          /* smaller font */
@@ -4742,8 +4829,8 @@ section,
 
 
 .expand-btn:hover {
-  background-color: black;    /* black background on hover */
-  color: white;               /* text turns white */
+  background-color: var(--default-color);    /* adaptive background on hover */
+  color: var(--contrast-color);               /* contrast text on hover */
 }
 .expand-btn .btn-icon {
   font-size: 0.8rem;
@@ -4771,5 +4858,12 @@ section,
 .stars {
   color: #fbbf24;
   font-size: 20px;
+}
+
+/* Hide theme label on tablet and mobile */
+@media (max-width: 991px) {
+  .theme-label {
+    display: none;
+  }
 }
 

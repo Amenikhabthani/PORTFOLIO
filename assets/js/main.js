@@ -316,20 +316,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const currentTheme = localStorage.getItem('theme') || 'dark';
   if (currentTheme === 'light') {
     body.classList.add('light-mode');
+    if (desktopToggle) desktopToggle.checked = true;
     updateIcons('sun-fill');
   } else {
+    if (desktopToggle) desktopToggle.checked = false;
     updateIcons('moon-fill');
   }
 
   // Update both desktop and mobile icons
   function updateIcons(iconName) {
-    if (desktopToggle) {
-      const desktopIcon = desktopToggle.querySelector('i');
-      if (desktopIcon) {
-        desktopIcon.classList.remove('bi-moon-fill', 'bi-sun-fill');
-        desktopIcon.classList.add('bi-' + iconName);
-      }
-    }
     if (mobileToggle) {
       const mobileIcon = mobileToggle.querySelector('i');
       if (mobileIcon) {
@@ -341,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Handle desktop toggle
   if (desktopToggle) {
-    desktopToggle.addEventListener('click', function() {
+    desktopToggle.addEventListener('change', function() {
       body.classList.toggle('light-mode');
       const isLight = body.classList.contains('light-mode');
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
