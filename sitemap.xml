@@ -3,21 +3,29 @@
 
   <url>
     <loc>https://amenikhabthani.github.io/PORTFOLIO/</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://amenikhabthani.github.io/PORTFOLIO/service-details-sr1.html</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://amenikhabthani.github.io/PORTFOLIO/service-details-sr2.html</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://amenikhabthani.github.io/PORTFOLIO/service-details-sr3.html</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
