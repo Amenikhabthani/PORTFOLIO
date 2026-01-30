@@ -15,7 +15,7 @@ jobs:
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://amenikhabthani.github.io/PORTFOLIO/
-          path-to-root: sitemap.xml
+          path-to-root: ./
           include-html: true
 
       - name: Commit sitemap
