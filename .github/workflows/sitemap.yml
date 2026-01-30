@@ -1,0 +1,19 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url: https://amenikhabthani.github.io/PORTFOLIO
+          sitemap-path: sitemap.xml
+          include-html: true
