@@ -24,6 +24,7 @@ jobs:
            message: "chore: auto-generate sitemap"
            add: "sitemap.xml"
            push: true
+           token: ${{ secrets.PAT_TOKEN }}
            author_name: github-actions[bot]
            author_email: github-actions[bot]@users.noreply.github.com
 
