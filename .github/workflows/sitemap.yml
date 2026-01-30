@@ -17,3 +17,9 @@ jobs:
           base-url: https://amenikhabthani.github.io/PORTFOLIO
           sitemap-path: sitemap.xml
           include-html: true
+
+      - name: Commit sitemap
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "chore: auto-generate sitemap"
+          add: "sitemap.xml"
