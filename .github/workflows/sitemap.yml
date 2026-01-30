@@ -14,12 +14,16 @@ jobs:
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url: https://amenikhabthani.github.io/PORTFOLIO/
-          sitemap-path: sitemap.xml
+          base-url-path: https://amenikhabthani.github.io/PORTFOLIO/
+          path-to-root: sitemap.xml
           include-html: true
 
       - name: Commit sitemap
         uses: EndBug/add-and-commit@v9
         with:
-          message: "chore: auto-generate sitemap"
-          add: "sitemap.xml"
+           message: "chore: auto-generate sitemap"
+           add: "sitemap.xml"
+           push: true
+           author_name: github-actions[bot]
+           author_email: github-actions[bot]@users.noreply.github.com
+
