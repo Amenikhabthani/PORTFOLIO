@@ -240,6 +240,12 @@ if (scrollTop) {
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
 
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register(new URL("sw.js", document.baseURI)).catch(() => {});
+      });
+    }
       if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);
       } else {
