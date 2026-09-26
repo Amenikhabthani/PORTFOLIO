@@ -177,7 +177,7 @@ h6 {
   margin-right: 8px;
 }
 
-.header .logo h1 {
+.header .logo .sitename {
   font-size: 30px;
   margin: 0;
   font-weight: 400;
@@ -870,7 +870,7 @@ section,
 
 }
 
-.hero h2 {
+.hero :is(h1, h2) {
   margin: 0;
   font-size: 48px;
   font-weight: 700;
@@ -944,11 +944,11 @@ section,
 
 /* Tablets & large phones */
 @media (max-width: 768px) {
-  .header .logo h1 {
+  .header .logo .sitename {
     font-size: 20px;
   }
 
-  .hero h2 {
+  .hero :is(h1, h2) {
     font-size: 22px;
   }
 
@@ -975,11 +975,11 @@ section,
 }
 /* Small phones */
 @media (max-width: 480px) {
-  .header .logo h1 {
+  .header .logo .sitename {
     font-size: 18px;
   }
 
-  .hero h2 {
+  .hero :is(h1, h2) {
     font-size: 15px;
   }
 
@@ -4667,7 +4667,7 @@ section,
     min-height: 60vh; /* Adjust hero section height to match image */
     width: 100vw;
   }
-  .hero h2 {
+  .hero :is(h1, h2) {
     font-size: 30px;
   }
   .hero p {
